@@ -1,11 +1,10 @@
 import { Inject, Service } from "typedi";
-import {Request, Response} from "express";
+import { Request, Response } from "express";
 import { IUserService } from "../@types/services/IUserService";
 
-@Service('UserController')
+@Service("UserController")
 export class UserController {
-
-  constructor(@Inject('UserService') private  userService: IUserService) {}
+  constructor(@Inject("UserService") private userService: IUserService) {}
 
   async list(request: Request, response: Response) {
     const users = await this.userService.listar();
@@ -19,11 +18,14 @@ export class UserController {
 
   async create(request: Request, response: Response) {
     const user = await this.userService.criar(request.body);
-    response.send(user);
+    response.json(user);
   }
 
   async update(request: Request, response: Response) {
-    const user = await this.userService.atualizar(Number(request.params.id), request.body);
+    const user = await this.userService.atualizar(
+      Number(request.params.id),
+      request.body
+    );
     response.send(user);
   }
 
