@@ -17,10 +17,6 @@ export class CreatePoltronas1638582587283 implements MigrationInterface {
             type: "varchar",
           },
           {
-            name: "idViagem",
-            type: "int",
-          },
-          {
             name: "created_at",
             type: "timestamp",
             default: "now()",
@@ -29,16 +25,6 @@ export class CreatePoltronas1638582587283 implements MigrationInterface {
             name: "updated_at",
             type: "timestamp",
             default: "now()",
-          },
-        ],
-        foreignKeys: [
-          {
-            name: "FKViagemPoltrona",
-            referencedTableName: "viagens",
-            referencedColumnNames: ["id"],
-            columnNames: ["idViagem"],
-            onDelete: "SET NULL",
-            onUpdate: "SET NULL",
           },
         ],
       })

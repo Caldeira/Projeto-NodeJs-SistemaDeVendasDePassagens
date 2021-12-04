@@ -13,10 +13,6 @@ export class CreateFuncionarios1638582278950 implements MigrationInterface {
             generationStrategy: "increment",
           },
           {
-            name: "idCompanhia",
-            type: "int",
-          },
-          {
             name: "nome",
             type: "varchar",
           },
@@ -34,16 +30,6 @@ export class CreateFuncionarios1638582278950 implements MigrationInterface {
             name: "updated_at",
             type: "timestamp",
             default: "now()",
-          },
-        ],
-        foreignKeys: [
-          {
-            name: "FKCompanhiaFuncionario",
-            referencedTableName: "companhias",
-            referencedColumnNames: ["id"],
-            columnNames: ["idCompanhia"],
-            onDelete: "SET NULL",
-            onUpdate: "SET NULL",
           },
         ],
       })
