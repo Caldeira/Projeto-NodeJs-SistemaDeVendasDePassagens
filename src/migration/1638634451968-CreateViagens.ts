@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class CreateViagens1638582373586 implements MigrationInterface {
+export class CreateViagens1638634451968 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -13,6 +13,11 @@ export class CreateViagens1638582373586 implements MigrationInterface {
             generationStrategy: "increment",
           },
           {
+            name: "codigoViagem",
+            type: "varchar",
+            isUnique: true,
+          },
+          {
             name: "origem",
             type: "varchar",
           },
@@ -21,12 +26,8 @@ export class CreateViagens1638582373586 implements MigrationInterface {
             type: "varchar",
           },
           {
-            name: "data",
+            name: "dataHora",
             type: "date",
-          },
-          {
-            name: "hora",
-            type: "time",
           },
           {
             name: "created_at",

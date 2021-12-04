@@ -4,13 +4,15 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
-  Timestamp,
 } from "typeorm";
 
 @Entity("viagens")
 export class Viagem {
   @PrimaryGeneratedColumn()
   id: number;
+
+  @Column({ unique: true, nullable: false })
+  codigoViagem: string;
 
   @Column()
   origem: string;
@@ -19,10 +21,7 @@ export class Viagem {
   destino: string;
 
   @Column()
-  data: Date;
-
-  @Column()
-  hora: Date;
+  dataHora: Date;
 
   @CreateDateColumn()
   created_at: Date;

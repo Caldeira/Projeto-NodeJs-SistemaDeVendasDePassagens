@@ -25,7 +25,7 @@ export class FuncionarioService implements IFuncionarioService {
     );
 
     if (matriculaExists) {
-      throw new Error("Matrícula já está cadastrado");
+      throw new Error("Matrícula já está cadastrada no sistema");
     }
     const funcionario = this.funcionarioRepository.createFuncionario(
       funcionarioDto.nome,
