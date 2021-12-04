@@ -1,13 +1,13 @@
 import { Router } from "express";
 import Container from "typedi";
 const router = Router();
-import { UserController } from "../controllers/UserController";
+import { CompanhiaController } from "../controllers/CompanhiaController";
 
-const getController = (): UserController => {
-  return Container.get<UserController>("UserController");
+const getController = (): CompanhiaController => {
+  return Container.get<CompanhiaController>("CompanhiaController");
 };
 
-const crateRouter = () => {
+const createRouter = () => {
   router.get("", (req, res) => getController().list(req, res));
   router.post("", (req, res) => getController().create(req, res));
   router.get("/:id", (req, res) => getController().get(req, res));
@@ -17,4 +17,4 @@ const crateRouter = () => {
   return router;
 };
 
-export default crateRouter;
+export default createRouter;

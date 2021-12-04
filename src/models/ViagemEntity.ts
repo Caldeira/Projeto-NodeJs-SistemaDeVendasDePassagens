@@ -22,7 +22,7 @@ export class Viagem {
   data: Date;
 
   @Column()
-  hora: Timestamp;
+  hora: Date;
 
   @CreateDateColumn()
   created_at: Date;
