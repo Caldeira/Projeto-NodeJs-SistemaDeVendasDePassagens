@@ -11,8 +11,8 @@ export class Poltrona {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  numero_poltrona: string;
+  @Column({ unique: true })
+  numeroPoltrona: string;
 
   @CreateDateColumn()
   created_at: Date;
