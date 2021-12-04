@@ -7,5 +7,11 @@ export interface IUserRepository {
   save(userDto: UserDTO): Promise<User>;
   remove(entities: User | User[]): Promise<User[]>;
   findByEmail(email: string): Promise<User | undefined>;
-  createUser(name: string, email: string, password: string): User;
+  createUser(
+    name: string,
+    email: string,
+    password: string,
+    admin?: boolean,
+    employee?: boolean
+  ): User;
 }

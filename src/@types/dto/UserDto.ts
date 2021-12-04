@@ -1,6 +1,5 @@
 export interface UserDTO {
   id?: number;
-  idCompanhia?: number;
   admin?: boolean;
   employee?: boolean;
   name: string;

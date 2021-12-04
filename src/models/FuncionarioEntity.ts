@@ -6,25 +6,16 @@ import {
   UpdateDateColumn,
 } from "typeorm";
 
-@Entity("users")
-export class User {
+@Entity("funcionarios")
+export class Funcionario {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  name: string;
+  nome: string;
 
   @Column({ unique: true, nullable: false })
-  email: string;
-
-  @Column()
-  password: string;
-
-  @Column({ default: false })
-  admin: boolean;
-
-  @Column({ default: false })
-  employee: boolean;
+  matricula: string;
 
   @CreateDateColumn()
   created_at: Date;

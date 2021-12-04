@@ -16,11 +16,19 @@ export class UserRepository
     return user;
   }
 
-  public createUser(name: string, email: string, password: string): User {
+  public createUser(
+    name: string,
+    email: string,
+    password: string,
+    admin?: boolean,
+    employee?: boolean
+  ): User {
     const user = this.create({
       name,
       email,
       password,
+      admin,
+      employee,
     });
     return user;
   }

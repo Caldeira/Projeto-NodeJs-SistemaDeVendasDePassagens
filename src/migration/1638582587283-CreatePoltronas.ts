@@ -13,7 +13,7 @@ export class CreatePoltronas1638582587283 implements MigrationInterface {
             generationStrategy: "increment",
           },
           {
-            name: "nº poltrona",
+            name: "numero_poltrona",
             type: "varchar",
           },
           {

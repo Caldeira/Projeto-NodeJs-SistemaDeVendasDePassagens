@@ -4,27 +4,25 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  Timestamp,
 } from "typeorm";
 
-@Entity("users")
-export class User {
+@Entity("viagens")
+export class Viagem {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  name: string;
-
-  @Column({ unique: true, nullable: false })
-  email: string;
+  origem: string;
 
   @Column()
-  password: string;
+  destino: string;
 
-  @Column({ default: false })
-  admin: boolean;
+  @Column()
+  data: Date;
 
-  @Column({ default: false })
-  employee: boolean;
+  @Column()
+  hora: Timestamp;
 
   @CreateDateColumn()
   created_at: Date;

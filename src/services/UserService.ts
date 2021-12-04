@@ -29,9 +29,13 @@ export class UserService implements IUserService {
     const user = this.userRepository.createUser(
       userDto.name,
       userDto.email,
-      (userDto.password = hashedPassword)
+      (userDto.password = hashedPassword),
+      userDto.admin,
+      userDto.employee
     );
-    return this.userRepository.save(user);
+    await this.userRepository.save(user);
+    delete user.password;
+    return user;
   }
 
   async atualizar(id: number, userDto: UserDTO) {
